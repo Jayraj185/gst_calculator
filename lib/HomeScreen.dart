@@ -23,6 +23,21 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("GST Calculator"),
         centerTitle: true,
         backgroundColor: Colors.deepOrange,
+        actions: [
+          IconButton(onPressed: (){
+            setState(() {
+               ans=0;
+               answer=0;
+               check = true;
+               check1 = true;
+               check2 = true;
+               check3 = true;
+               check4 = true;
+               isVis = false;
+               Amount.clear();
+            });
+          }, icon: Icon(Icons.refresh,color: Colors.white,))
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(15),
@@ -66,7 +81,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               String amount = Amount.text;
                               setState(() {
                                 check = !check;
-                                isVis = !isVis;
+                                check1=true;
+                                check2=true;
+                                check3=true;
+                                check4=true;
+                                isVis = true;
                                 ans = int.parse(amount);
                                 answer = ((ans*103)/100);
                               });
@@ -88,7 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               String amount = Amount.text;
                               setState(() {
                                 check1 = !check1;
-                                isVis = !isVis;
+                                check=true;
+                                check2=true;
+                                check3=true;
+                                check4=true;
+                                isVis = true;
                                 ans = int.parse(amount);
                                 answer = ((ans*105)/100);
                               });
@@ -110,7 +133,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               String amount = Amount.text;
                               setState(() {
                                 check2 = !check2;
-                                isVis = !isVis;
+                                check=true;
+                                check1=true;
+                                check3=true;
+                                check4=true;
+                                isVis = true;
                                 ans = int.parse(amount);
                                 answer = ((ans*112)/100);
                               });
@@ -132,7 +159,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               String amount = Amount.text;
                               setState(() {
                                 check3 = !check3;
-                                isVis = !isVis;
+                                check=true;
+                                check1=true;
+                                check2=true;
+                                check4=true;
+                                isVis = true;
                                 ans = int.parse(amount);
                                 answer = ((ans*118)/100);
                               });
@@ -154,7 +185,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               String amount = Amount.text;
                               setState(() {
                                 check4 = !check4;
-                                isVis = !isVis;
+                                check=true;
+                                check1=true;
+                                check2=true;
+                                check3=true;
+                                isVis = true;
                                 ans = int.parse(amount);
                                 answer = ((ans*128)/100);
                               });
